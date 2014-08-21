@@ -9,20 +9,21 @@ var StickyNav = (function($) {
 
 var win = $(window);
 
-// root may be a jQuery object, a DOM element or a selector
-var StickyNav = function(root) {
-	this.root = root.jquery ? root : $(root);
+// `selector` specifies the element whose visibility determines activation
+// `options.fixedClass` can be used to customize the class being added
+var StickyNav = function(selector, options) {
+	options = options || {};
 
+	this.root = selector.jquery ? selector : $(selector);
 	this.root.addClass("sticky");
+
+	this.fixedClass = options.fixedClass || "fixed";
+	this.fixed = false;
+
 	this.navTop = this.root.length && this.root.offset().top;
 
-	win.on("scroll", $.proxy(this.onScroll, this));
-	this.onScroll();
+	win.on("scroll", $.proxy(this.onScroll, this)).trigger("scroll");
 };
-$.extend(StickyNav.prototype, {
-	fixed: false,
-	fixedClass: "fixed"
-});
 StickyNav.prototype.onScroll = function(ev) {
 	if(this.root.filter(":visible").length === 0) {
 		return;
