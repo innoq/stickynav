@@ -33,12 +33,12 @@ StickyNav.prototype.onScroll = function(ev) {
 
 	var scrollTop = win.scrollTop();
 	var toggled;
-	if(scrollTop > this.navTop && !this.fixed) {
+	if(!this.fixed && scrollTop > this.navTop) {
 		var width = this.root.innerWidth();
 		this.fixed = true;
 		this.root.css({ width: width }).addClass(this.fixedClass);
 		toggled = true;
-	} else if(scrollTop <= this.navTop && this.fixed) {
+	} else if(this.fixed && scrollTop <= this.navTop) {
 		this.fixed = false;
 		this.root.removeAttr("style").removeClass(this.fixedClass);
 		toggled = true;
