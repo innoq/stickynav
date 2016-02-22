@@ -63,6 +63,8 @@ return StickyNav;
 
 }(jQuery));
 
-if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
-  module.exports = StickyNav;
+// optionally export as CommonJS module
+// (adapted from UMD <https://github.com/umdjs/umd>)
+if(typeof exports === "object" && typeof exports.nodeName !== "string") {
+	module.exports = StickyNav;
 }
