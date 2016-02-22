@@ -62,3 +62,7 @@ StickyNav.prototype.onScroll = function(ev) {
 return StickyNav;
 
 }(jQuery));
+
+if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
+  module.exports = StickyNav;
+}
