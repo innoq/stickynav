@@ -1,0 +1,19 @@
+{
+  "name": "stickynav",
+  "version": "1.0.0",
+  "description": "simple jQuery plugin to make elements \"sticky\" before they scroll out of view",
+  "main": "stickynav.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/innoq/stickynav.git"
+  },
+  "author": "FND",
+  "license": "ASL",
+  "bugs": {
+    "url": "https://github.com/innoq/stickynav/issues"
+  },
+  "homepage": "https://github.com/innoq/stickynav#readme"
+}
